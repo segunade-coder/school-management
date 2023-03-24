@@ -5,7 +5,7 @@ const db_cred = {
   database: "id20502618_paymof",
   host: "localhost",
   user: "id20502618_tee",
-  password: "Segunade041@",
+  password: "p#4(q_k>j<sT2Wnu",
 };
 
 // create a database connection with the credentials above
@@ -19,6 +19,7 @@ connection.connect((err) => {
       __filename,
       new Error().stack.match(/(:[\d]+)/)[0].replace(":", "")
     );
+    console.log(err)
   } else {
     console.log("connected to apache database...");
 
