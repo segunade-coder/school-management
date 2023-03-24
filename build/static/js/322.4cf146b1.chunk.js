@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpaymof=self.webpackChunkpaymof||[]).push([[322],{7322:function(e,n,l){l.r(n);l(2791);var o=l(184);n.default=function(){return(0,o.jsxs)("h1",{style:{textAlign:"center",color:"#494848"},children:["Opps! you have been logged out. Try ",(0,o.jsx)("a",{href:"../login",children:"loging"})," in again"]})}}}]);
+//# sourceMappingURL=322.4cf146b1.chunk.js.map

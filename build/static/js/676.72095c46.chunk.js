@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpaymof=self.webpackChunkpaymof||[]).push([[676],{8676:function(e,n,r){r.r(n);r(2791);var a=r(184);n.default=function(){return(0,a.jsxs)("div",{children:["404 Error ",(0,a.jsx)("br",{}),"This page cannot be found.",(0,a.jsx)("a",{href:"../",children:"go Back"})]})}}}]);
+//# sourceMappingURL=676.72095c46.chunk.js.map

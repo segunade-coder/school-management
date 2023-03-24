@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpaymof=self.webpackChunkpaymof||[]).push([[805],{9805:function(e,n,r){r.r(n);r(2791);var a=r(6871),c=r(184);n.default=function(){var e=(0,a.s0)();return(0,c.jsxs)("div",{children:["Sorry, you are not authorized to access this page",(0,c.jsx)("p",{onClick:function(n){return e("../")},children:" go back"})]})}}}]);
+//# sourceMappingURL=805.86b315d3.chunk.js.map
