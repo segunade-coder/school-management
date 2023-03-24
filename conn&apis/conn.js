@@ -6,7 +6,6 @@ const db_cred = {
   host: "localhost",
   user: "id20502618_tee",
   password: "Segunade041@",
-  port: "3306",
 };
 
 // create a database connection with the credentials above
