@@ -3,10 +3,10 @@ const logErr = require("./logErrors");
 // mysql apache credentials for connnecting to xampp without database
 const db_cred = {
   database: "id20502618_paymof",
-  host: "dpg-cgevtrseoogq9gsgq3q0-a",
-  user: "paymof_user",
-  password: "hd4mGYUENf2zJ50dNRtl9nhAr2dYbYHL",
-  port: "5432",
+  host: "sql12.freesqldatabase.com",
+  user: "sql12608320",
+  password: "CjAnUskEsJ",
+  port: "sql12608320",
 };
 
 // create a database connection with the credentials above
