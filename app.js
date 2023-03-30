@@ -79,19 +79,19 @@ app.use(
   })
 );
 app.use(
-  session({
-  resave: false,
-  saveUninitialized: false,
-  secret: "long_randomly_generated_string",
-  key: "unique_key_value",
-  store: sessionStore,
-  cookie: {
-    httpOnly: true,
-    maxAge: 20 * 24 * 60 * 60 * 1000,
-    sameSite: "none",
-    secure: true,
-  },
-});
+session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "This is a secret",
+    key: "paymof",
+    store: sessionStore,
+    cookie: {
+      httpOnly: true,
+      maxAge: 20 * 24 * 60 * 60 * 1000,
+      sameSite: "none",
+      secure: true,
+    },
+  })
 
 );
 WebSok(io, conn);
