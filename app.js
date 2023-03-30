@@ -13,10 +13,10 @@ const MysqlStore = require("express-mysql-session")(session);
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 const sessionStore = new MysqlStore({
-  database: "paymof",
-  host: "localhost",
-  user: "root",
-  password: "",
+ database: "sql12608320",
+  host: "sql12.freesqldatabase.com",
+  user: "sql12608320",
+  password: "CjAnUskEsJ",
   port: "3306",
   clearExpired: true,
   checkExpirationInterval: 900000,
@@ -57,7 +57,7 @@ const regRouter = require("./Routers/regRouter");
 const loginRouter = require("./Routers/loginRouter");
 const mainRouter = require("./Routers/mainRouter");
 // url module
-let origins = ["http://localhost:3000", "http://localhost:5000"];
+//let origins = ["http://localhost:3000", "http://localhost:5000"];
 if (wifiConected) {
   // add network adress to origin to prevent cors error
   if (mainAddress.length !== 0) {
@@ -70,7 +70,7 @@ const io = require("socket.io")(server, {
   },
 });
 
-app.set("trust proxy", 1);
+//app.set("trust proxy", 1);
 app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(
   cors({
@@ -80,19 +80,19 @@ app.use(
 );
 app.use(
   session({
-    resave: false,
-    saveUninitialized: false,
-    secret: "This is a secret",
-    key: "paymof",
-    store: sessionStore,
-    cookie: {
-      // domain: "localhost",
-      httpOnly: "true",
-      maxAge: 20 * 24 * 60 * 60 * 100,
-      sameSite: "lax",
-      secure: false,
-    },
-  })
+  resave: false,
+  saveUninitialized: false,
+  secret: "long_randomly_generated_string",
+  key: "unique_key_value",
+  store: sessionStore,
+  cookie: {
+    httpOnly: true,
+    maxAge: 20 * 24 * 60 * 60 * 1000,
+    sameSite: "none",
+    secure: true,
+  },
+});
+
 );
 WebSok(io, conn);
 
