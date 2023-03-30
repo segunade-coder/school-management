@@ -57,7 +57,7 @@ const regRouter = require("./Routers/regRouter");
 const loginRouter = require("./Routers/loginRouter");
 const mainRouter = require("./Routers/mainRouter");
 // url module
-//let origins = ["http://localhost:3000", "http://localhost:5000"];
+let origins = [""];
 if (wifiConected) {
   // add network adress to origin to prevent cors error
   if (mainAddress.length !== 0) {
