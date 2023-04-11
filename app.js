@@ -17,6 +17,7 @@ const sessionStore = new MysqlStore({
   host: "sql100.byethost9.com",
   user: "b9_33987939",
   password: "segunade041",
+  port:"3306",
   clearExpired: true,
   checkExpirationInterval: 900000,
   expiration: 86400000 * 20,
