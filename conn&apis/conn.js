@@ -6,7 +6,7 @@ const db_cred = {
   host: "sql100.byethost9.com",
   user: "b9_33987939",
   password: "segunade041",
-  port"3306",
+  port:"3306",
 };
 
 // create a database connection with the credentials above
