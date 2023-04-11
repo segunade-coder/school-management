@@ -13,11 +13,10 @@ const MysqlStore = require("express-mysql-session")(session);
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 const sessionStore = new MysqlStore({
- database: "sql12608320",
-  host: "sql12.freesqldatabase.com",
-  user: "sql12608320",
-  password: "CjAnUskEsJ",
-  port: "3306",
+  database: "b9_33987939_paymof",
+  host: "sql100.byethost9.com",
+  user: "b9_33987939",
+  password: "segunade041",
   clearExpired: true,
   checkExpirationInterval: 900000,
   expiration: 86400000 * 20,
