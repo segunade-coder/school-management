@@ -6,9 +6,7 @@ const conn = require("./conn&apis/conn");
 const session = require("express-session");
 const server = require("http").createServer(app);
 const chalk = require("chalk");
-const os = require("os");
 let WebSok = require("./conn&apis/webSok");
-const { exec } = require("child_process");
 const MysqlStore = require("express-mysql-session")(session);
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
@@ -34,35 +32,12 @@ const sessionStore = new MysqlStore({
   },
 });
 // chech if network is available
-let wifiConected;
-const addresses = [];
-let mainAddress = "";
-// get arrays of network available.
-const interfaces = os.networkInterfaces();
-// loop through the array of etworks
-for (const name of Object.keys(interfaces)) {
-  for (const interface of interfaces[name]) {
-    // search for address that is not internak
-    if (interface.family === "IPv4" && !interface.internal) {
-      // push into address
-      addresses.push(interface.address);
-      mainAddress = addresses;
-      wifiConected = true;
-      break;
-    }
-  }
-}
 const regRouter = require("./Routers/regRouter");
 const loginRouter = require("./Routers/loginRouter");
 const mainRouter = require("./Routers/mainRouter");
 // url module
 let origins = ["https://paymof.onrender.com/"];
-if (wifiConected) {
-  // add network adress to origin to prevent cors error
-  if (mainAddress.length !== 0) {
-    mainAddress.map((address) => origins.push(`http://${address}:${PORT}`));
-  }
-}
+
 const io = require("socket.io")(server, {
   cors: {
     origin: origins,
@@ -81,7 +56,7 @@ app.use(
 session({
     resave: false,
     saveUninitialized: false,
-    secret: "This is a secret",
+    secret: "This_it_secret_$PVSG@1ZsF9l_",
     key: "paymof",
     store: sessionStore,
     cookie: {
@@ -123,31 +98,6 @@ server.listen(PORT, (err) => {
   console.log("");
   console.log(`You can view app in the browser.`);
   console.log("");
-  console.log(
-    chalk.whiteBright(
-      ` ${
-        mainAddress.length !== 0 ? "Local:            " : ""
-      }http://localhost:${PORT}`
-    )
-  );
-  mainAddress.length !== 0 &&
-    console.log(
-      chalk.whiteBright(
-        ` On Your Network:  ${
-          mainAddress.length !== 0 &&
-          mainAddress?.map(
-            (address, index) =>
-              `http://${address !== "" ? address : ""}:${PORT}`
-          )
-        }`
-      )
-    );
-  mainAddress.length !== 0 && console.log("");
-  console.log(`webpack Compiled ${chalk.green("succesfully")}`);
-  console.log("");
 
-  let command;
-  command = `explorer "http://localhost:${PORT}/"`;
-  exec(command);
 });
 
