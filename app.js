@@ -116,4 +116,72 @@ app.get("/logout", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./build", "index.html"));
 });
-server.listen();
+server.listen(PORT, (err) => {
+  if (err) throw err;
+  console.clear();
+  console.log(chalk.green(`compiled succesfully!`));
+  console.log("");
+  console.log(`You can view app in the browser.`);
+  console.log("");
+  console.log(
+    chalk.whiteBright(
+      ` ${
+        mainAddress.length !== 0 ? "Local:            " : ""
+      }http://localhost:${PORT}`
+    )
+  );
+  mainAddress.length !== 0 &&
+    console.log(
+      chalk.whiteBright(
+        ` On Your Network:  ${
+          mainAddress.length !== 0 &&
+          mainAddress?.map(
+            (address, index) =>
+              `http://${address !== "" ? address : ""}:${PORT}`
+          )
+        }`
+      )
+    );
+  mainAddress.length !== 0 && console.log("");
+  console.log(`webpack Compiled ${chalk.green("succesfully")}`);
+  console.log("");
+
+  let command;
+  command = `explorer "http://localhost:${PORT}/"`;
+  exec(command);
+});
+server.listen(PORT, (err) => {
+  if (err) throw err;
+  console.clear();
+  console.log(chalk.green(`compiled succesfully!`));
+  console.log("");
+  console.log(`You can view app in the browser.`);
+  console.log("");
+  console.log(
+    chalk.whiteBright(
+      ` ${
+        mainAddress.length !== 0 ? "Local:            " : ""
+      }http://localhost:${PORT}`
+    )
+  );
+  mainAddress.length !== 0 &&
+    console.log(
+      chalk.whiteBright(
+        ` On Your Network:  ${
+          mainAddress.length !== 0 &&
+          mainAddress?.map(
+            (address, index) =>
+              `http://${address !== "" ? address : ""}:${PORT}`
+          )
+        }`
+      )
+    );
+  mainAddress.length !== 0 && console.log("");
+  console.log(`webpack Compiled ${chalk.green("succesfully")}`);
+  console.log("");
+
+  let command;
+  command = `explorer "http://localhost:${PORT}/"`;
+  exec(command);
+});
+
