@@ -10,11 +10,12 @@ let WebSok = require("./conn&apis/webSok");
 const MysqlStore = require("express-mysql-session")(session);
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
+const {host, user, password, database_name} = require("./conn&apis/infos")
 const sessionStore = new MysqlStore({
- host: "31.22.4.18",
- user: "ushmoney_jeo_segun",
- password: "ushTeam123!",
- database: "ushmoney_segun",
+ host,
+ user,
+ password,
+ database_name,
   clearExpired: true,
   checkExpirationInterval: 900000,
   expiration: 86400000 * 20,
