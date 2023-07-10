@@ -4,7 +4,7 @@ const logErr = require("./logErrors");
 const {password, host, database_name, user} = require("./infos")
 const db_cred = {
  host,
- user",
+ user,
  password,
  database_name,
 };
